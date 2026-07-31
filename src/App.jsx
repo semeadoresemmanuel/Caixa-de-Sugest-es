@@ -29,13 +29,17 @@ export default function App() {
   const [authError, setAuthError] = useState(false);
   const [showAdminPassword, setShowAdminPassword] = useState(false);
 
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    return saved ? saved === 'dark' : false;
+  });
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 
   const ADMIN_PASSCODE = 'admsemeadores*';
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
 
   const handleAuthSubmit = () => {
