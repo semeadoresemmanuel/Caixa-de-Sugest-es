@@ -234,7 +234,7 @@ export function RichTextEditor({ text, setText }) {
           className={`p-2 rounded-lg transition-all duration-300 ${activeStyles.bold ? 'bg-[var(--primary-color)] text-[#121212] shadow-[var(--shadow-glow)] scale-110' : 'hover:bg-[var(--primary-color)]/10 text-[var(--text-main)]'}`} 
           title="Negrito"
         >
-          <span className="font-extrabold text-[17px] leading-none w-[18px] h-[18px] flex items-center justify-center">N</span>
+          <span className="font-extrabold text-[17px] leading-none w-[18px] h-[18px] flex items-center justify-center">B</span>
         </button>
         <button 
           type="button" 
@@ -257,7 +257,7 @@ export function RichTextEditor({ text, setText }) {
           type="button" 
           onClick={() => execCommand('insertUnorderedList')} 
           className={`p-2 rounded-lg transition-all duration-300 ${activeStyles.list ? 'bg-[var(--primary-color)] text-[#121212] shadow-[var(--shadow-glow)] scale-110' : 'hover:bg-[var(--primary-color)]/10 text-[var(--text-main)]'}`} 
-          title="Checkpoints"
+          title="Marcadores"
         >
           <List size={18} />
         </button>

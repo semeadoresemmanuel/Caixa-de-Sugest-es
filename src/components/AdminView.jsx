@@ -34,12 +34,12 @@ export function AdminView({
           </div>
           <div className="flex flex-row gap-1.5 sm:gap-2 shrink-0">
             {suggestions.length > 0 && (
-              <button onClick={handleDeleteAll} className="border px-2 sm:px-3 py-1.5 rounded-lg transition flex items-center justify-center space-x-1.5 sm:space-x-2 cursor-pointer outline-none active:scale-95" style={{ backgroundColor: 'var(--card-bg)', borderColor: '#ff4444', color: '#ff4444' }} title="Limpar">
+              <button onClick={handleDeleteAll} className="border-2 px-2 sm:px-3 py-1.5 rounded-lg transition flex items-center justify-center space-x-1.5 sm:space-x-2 cursor-pointer outline-none active:scale-95" style={{ backgroundColor: 'var(--card-bg)', borderColor: '#ff4444', color: '#ff4444' }} title="Limpar">
                 <span className="text-xs sm:text-sm font-bold tracking-tight uppercase" style={{ fontFamily: "'Montserrat', sans-serif" }}>Limpar</span>
                 <Trash2 size={16} />
               </button>
             )}
-            <button onClick={() => { setIsAdminView(false); setIsAuthenticatedAdmin(false); }} className="border px-2 sm:px-3 py-1.5 rounded-lg transition flex items-center justify-center space-x-1.5 sm:space-x-2 cursor-pointer outline-none active:scale-95" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border-color)', color: 'var(--primary-color)' }} title="Sair">
+            <button onClick={() => { setIsAdminView(false); setIsAuthenticatedAdmin(false); }} className="border-2 px-2 sm:px-3 py-1.5 rounded-lg transition flex items-center justify-center space-x-1.5 sm:space-x-2 cursor-pointer outline-none active:scale-95" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border-color)', color: 'var(--primary-color)' }} title="Sair">
               <span className="text-xs sm:text-sm font-bold tracking-tight uppercase" style={{ fontFamily: "'Montserrat', sans-serif" }}>Sair</span>
               <img src={exitImg} alt="Sair" className="w-3.5 h-3.5 object-contain" />
             </button>
@@ -47,12 +47,12 @@ export function AdminView({
         </div>
         <div className="space-y-4">
           {suggestions.length === 0 ? (
-            <div className="p-12 rounded-2xl shadow-sm text-center border" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border-color)' }}>
+            <div className="p-12 rounded-2xl shadow-sm text-center border-2" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border-color)' }}>
               <p style={{ color: 'var(--primary-color)' }}>Não há sugestões no momento.</p>
             </div>
           ) : (
             suggestions.map((sug) => (
-              <div key={sug.id} className="p-6 pb-14 rounded-2xl shadow-sm border group relative" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border-color)' }}>
+              <div key={sug.id} className="p-6 pb-14 rounded-2xl shadow-sm border-2 group relative" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border-color)' }}>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex-1"></div>
                   <span className="text-xs font-medium" style={{ color: 'var(--text-main)' }}>{formatDate(sug.timestamp)}</span>
@@ -60,7 +60,7 @@ export function AdminView({
                 </div>
                 <div className="whitespace-pre-wrap leading-relaxed rich-text-content" style={{ color: 'var(--text-main)' }} dangerouslySetInnerHTML={{ __html: sug.text }} />
                 <div className="absolute bottom-4 right-4">
-                  <button onClick={() => handleDelete(sug.id)} className="border p-1 rounded-lg transition-all duration-300 hover:scale-[1.1] cursor-pointer" style={{ color: '#ff4444', borderColor: '#ff4444' }} title="Excluir"><Trash2 size={14} /></button>
+                  <button onClick={() => handleDelete(sug.id)} className="border-2 p-1 rounded-lg transition-all duration-300 hover:scale-[1.1] cursor-pointer" style={{ color: '#ff4444', borderColor: '#ff4444' }} title="Excluir"><Trash2 size={14} /></button>
                 </div>
               </div>
             ))

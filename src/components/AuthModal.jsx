@@ -31,8 +31,8 @@ export function AuthModal({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="relative w-full max-w-[300px] bg-card border border-border p-4 pt-6 rounded-[40px] shadow-2xl text-center"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            className="relative w-full max-w-[300px] bg-card border-2 p-4 pt-6 rounded-[40px] shadow-2xl text-center"
+            style={{ fontFamily: "'Montserrat', sans-serif", borderColor: 'var(--border-color)' }}
           >
             <button 
               type="button"
@@ -78,11 +78,11 @@ export function AuthModal({
                     }
                   }}
                   className={cn(
-                    "w-full bg-muted border rounded-2xl px-12 py-4 text-center text-lg tracking-widest focus:outline-none transition-all italic",
+                    "w-full bg-muted border-2 rounded-2xl px-12 py-4 text-center text-lg tracking-widest focus:outline-none transition-all italic",
                     darkMode ? "text-white" : "text-black",
-                    authError ? "border-destructive ring-1 ring-destructive" : "border-border focus:border-primary/50"
+                    authError ? "border-destructive ring-1 ring-destructive" : "focus:border-primary/50"
                   )}
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  style={{ fontFamily: "'Montserrat', sans-serif", borderColor: authError ? undefined : 'var(--border-color)' }}
                 />
                 <button 
                   type="button"
@@ -108,10 +108,7 @@ export function AuthModal({
                 <button 
                   type="button"
                   onClick={handleAuthSubmit}
-                  className={cn(
-                    "w-full bg-primary font-bold uppercase py-4 rounded-2xl shadow-lg shadow-primary/20 transition-all",
-                    darkMode ? "text-white" : "text-black"
-                  )}
+                  className="w-full bg-primary font-bold uppercase py-4 rounded-2xl shadow-lg shadow-primary/20 transition-all text-[#F7F7F7]"
                 >
                   Acessar
                 </button>
