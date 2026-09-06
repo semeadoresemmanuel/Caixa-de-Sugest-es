@@ -231,7 +231,7 @@ export function RichTextEditor({ text, setText }) {
         <button 
           type="button" 
           onClick={() => execCommand('bold')} 
-          className={`p-2 rounded-lg transition-all duration-300 ${activeStyles.bold ? 'bg-[var(--primary-color)] text-[#121212] shadow-[var(--shadow-glow)] scale-110' : 'hover:bg-[var(--primary-color)]/10 text-[var(--text-main)]'}`} 
+          className={`p-2 rounded-lg transition-all duration-300 ${activeStyles.bold ? 'bg-[var(--primary-color)] text-[var(--submit-btn-text)] shadow-[var(--shadow-glow)] scale-110' : 'hover:bg-[var(--primary-color)]/10 text-[var(--text-main)]'}`} 
           title="Negrito"
         >
           <span className="font-extrabold text-[17px] leading-none w-[18px] h-[18px] flex items-center justify-center">B</span>
@@ -239,7 +239,7 @@ export function RichTextEditor({ text, setText }) {
         <button 
           type="button" 
           onClick={() => execCommand('italic')} 
-          className={`p-2 rounded-lg transition-all duration-300 ${activeStyles.italic ? 'bg-[var(--primary-color)] text-[#121212] shadow-[var(--shadow-glow)] scale-110' : 'hover:bg-[var(--primary-color)]/10 text-[var(--text-main)]'}`} 
+          className={`p-2 rounded-lg transition-all duration-300 ${activeStyles.italic ? 'bg-[var(--primary-color)] text-[var(--submit-btn-text)] shadow-[var(--shadow-glow)] scale-110' : 'hover:bg-[var(--primary-color)]/10 text-[var(--text-main)]'}`} 
           title="Itálico"
         >
           <Italic size={18} />
@@ -247,7 +247,7 @@ export function RichTextEditor({ text, setText }) {
         <button 
           type="button" 
           onClick={() => execCommand('underline')} 
-          className={`p-2 rounded-lg transition-all duration-300 ${activeStyles.underline ? 'bg-[var(--primary-color)] text-[#121212] shadow-[var(--shadow-glow)] scale-110' : 'hover:bg-[var(--primary-color)]/10 text-[var(--text-main)]'}`} 
+          className={`p-2 rounded-lg transition-all duration-300 ${activeStyles.underline ? 'bg-[var(--primary-color)] text-[var(--submit-btn-text)] shadow-[var(--shadow-glow)] scale-110' : 'hover:bg-[var(--primary-color)]/10 text-[var(--text-main)]'}`} 
           title="Sublinhado"
         >
           <Underline size={18} />
@@ -256,7 +256,7 @@ export function RichTextEditor({ text, setText }) {
         <button 
           type="button" 
           onClick={() => execCommand('insertUnorderedList')} 
-          className={`p-2 rounded-lg transition-all duration-300 ${activeStyles.list ? 'bg-[var(--primary-color)] text-[#121212] shadow-[var(--shadow-glow)] scale-110' : 'hover:bg-[var(--primary-color)]/10 text-[var(--text-main)]'}`} 
+          className={`p-2 rounded-lg transition-all duration-300 ${activeStyles.list ? 'bg-[var(--primary-color)] text-[var(--submit-btn-text)] shadow-[var(--shadow-glow)] scale-110' : 'hover:bg-[var(--primary-color)]/10 text-[var(--text-main)]'}`} 
           title="Marcadores"
         >
           <List size={18} />
@@ -264,7 +264,7 @@ export function RichTextEditor({ text, setText }) {
         <button 
           type="button" 
           onClick={() => execCommand('insertOrderedList')} 
-          className={`p-2 rounded-lg transition-all duration-300 ${activeStyles.orderedList ? 'bg-[var(--primary-color)] text-[#121212] shadow-[var(--shadow-glow)] scale-110' : 'hover:bg-[var(--primary-color)]/10 text-[var(--text-main)]'}`} 
+          className={`p-2 rounded-lg transition-all duration-300 ${activeStyles.orderedList ? 'bg-[var(--primary-color)] text-[var(--submit-btn-text)] shadow-[var(--shadow-glow)] scale-110' : 'hover:bg-[var(--primary-color)]/10 text-[var(--text-main)]'}`} 
           title="Numeração"
         >
           <ListOrdered size={18} />

@@ -37,10 +37,8 @@ export function AuthModal({
             <button 
               type="button"
               onClick={() => setIsAuthModalOpen(false)}
-              className={cn(
-                "absolute top-6 left-6 p-1 transition-colors hover:text-primary",
-                darkMode ? "text-[#f7f7f7ff]" : "text-[#09090B]"
-              )}
+              className="absolute top-6 left-6 p-1 transition-colors hover:text-primary"
+              style={{ color: 'var(--text-main)' }}
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -52,11 +50,8 @@ export function AuthModal({
                 className="w-9 h-9 object-contain" 
               />
             </div>
-            <h2 className="text-xl font-bold uppercase tracking-widest text-foreground mb-1">Acesso Restrito</h2>
-            <p className={cn(
-              "text-[10px] mb-6 leading-relaxed",
-              darkMode ? "text-white" : "text-black"
-            )}>
+            <h2 className="text-xl font-bold uppercase tracking-widest mb-1" style={{ color: 'var(--text-main)' }}>Acesso Restrito</h2>
+            <p className="text-[10px] mb-6 leading-relaxed" style={{ color: 'var(--text-main)' }}>
               Digite a senha para entrar no<br />
               <strong className="italic">MODO ADMINISTRADOR</strong>
             </p>
@@ -79,18 +74,19 @@ export function AuthModal({
                   }}
                   className={cn(
                     "w-full bg-muted border-2 rounded-2xl px-12 py-4 text-center text-lg tracking-widest focus:outline-none transition-all italic",
-                    darkMode ? "text-white" : "text-black",
                     authError ? "border-destructive ring-1 ring-destructive" : "focus:border-primary/50"
                   )}
-                  style={{ fontFamily: "'Montserrat', sans-serif", borderColor: authError ? undefined : 'var(--border-color)' }}
+                  style={{ 
+                    fontFamily: "'Montserrat', sans-serif", 
+                    color: 'var(--text-main)',
+                    borderColor: authError ? undefined : 'var(--border-color)' 
+                  }}
                 />
                 <button 
                   type="button"
                   onClick={() => setShowAdminPassword(!showAdminPassword)}
-                  className={cn(
-                    "absolute right-4 top-1/2 -translate-y-1/2 hover:text-primary transition-colors z-10",
-                    darkMode ? "text-white" : "text-black"
-                  )}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 hover:text-primary transition-colors z-10"
+                  style={{ color: 'var(--text-main)' }}
                 >
                   {showAdminPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
@@ -108,7 +104,11 @@ export function AuthModal({
                 <button 
                   type="button"
                   onClick={handleAuthSubmit}
-                  className="w-full bg-primary font-bold uppercase py-4 rounded-2xl shadow-lg shadow-primary/20 transition-all text-[#F7F7F7]"
+                  className="w-full bg-primary font-bold uppercase py-4 rounded-2xl shadow-lg shadow-primary/20 transition-all"
+                  style={{ 
+                    color: 'var(--submit-btn-text)',
+                    backgroundColor: 'var(--primary-color)' 
+                  }}
                 >
                   Acessar
                 </button>

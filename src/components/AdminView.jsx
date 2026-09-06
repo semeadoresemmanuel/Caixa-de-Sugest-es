@@ -89,7 +89,7 @@ export function AdminView({
               </button>
               <button 
                 onClick={() => setIsConfirmModalOpen(false)}
-                className="w-full py-4 rounded-2xl font-bold tracking-[0.2em] uppercase transition-all border-2 bg-[var(--primary-color)] text-[var(--text-main)] border-[var(--primary-color)] hover:scale-105 active:scale-95 shadow-[var(--btn-shadow)]"
+                className="w-full py-4 rounded-2xl font-bold tracking-[0.2em] uppercase transition-all border-2 bg-[var(--primary-color)] text-[var(--submit-btn-text)] border-[var(--primary-color)] hover:scale-105 active:scale-95 shadow-[var(--btn-shadow)]"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 CANCELAR

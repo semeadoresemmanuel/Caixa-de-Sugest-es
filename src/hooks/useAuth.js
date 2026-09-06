@@ -6,9 +6,7 @@ export function useAuth() {
   const [user, setUser] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
   
-  const [isAuthenticatedAdmin, setIsAuthenticatedAdmin] = useState(
-    window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-  );
+  const [isAuthenticatedAdmin, setIsAuthenticatedAdmin] = useState(false);
   
   useEffect(() => {
     const initAuth = async () => {

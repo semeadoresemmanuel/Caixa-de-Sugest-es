@@ -7,6 +7,21 @@
 }
 
 :root {
+  --bg-color: #f7f7f7;
+  --card-bg: #f7f7f7;
+  --primary-color: #009C00;
+  --primary-glow: rgba(0, 156, 0, 0.05);
+  --border-color: #009C00;
+  --text-dim: rgba(0, 156, 0, 0.6);
+  --input-bg: #f7f7f7;
+  --text-main: #121212;
+  --shadow-glow: 0 0 15px rgba(0, 156, 0, 0.6);
+  --btn-shadow: 0 0 25px rgba(0, 156, 0, 0.4);
+  --submit-shadow: 0 0 30px rgba(0, 156, 0, 0.7);
+  --submit-btn-text: #F7F7F7;
+}
+
+[data-theme='dark'] {
   --bg-color: #121212;
   --card-bg: #121212;
   --primary-color: #00cc00;
@@ -21,19 +36,16 @@
   --submit-btn-text: #121212;
 }
 
-[data-theme='light'] {
-  --bg-color: #f7f7f7;
-  --card-bg: #f7f7f7;
-  --primary-color: #009C00;
-  --primary-glow: rgba(0, 156, 0, 0.05);
-  --border-color: #009C00;
-  --text-dim: rgba(0, 156, 0, 0.6);
-  --input-bg: #f7f7f7;
-  --text-main: #121212;
-  --shadow-glow: 0 0 15px rgba(0, 156, 0, 0.6);
-  --btn-shadow: 0 0 25px rgba(0, 156, 0, 0.4);
-  --submit-shadow: 0 0 30px rgba(0, 156, 0, 0.7);
-  --submit-btn-text: #F7F7F7;
+/* Ocultação global de barras de rolagem (preserva funcionalidade de rolagem) */
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 html, body {
@@ -66,21 +78,6 @@ body {
   pointer-events: none;
   display: block;
   opacity: 0.2;
-}
-
-@keyframes neon-flicker {
-  0%, 100% { 
-    box-shadow: 0 0 10px var(--primary-color), inset 0 0 5px var(--primary-color);
-    opacity: 1;
-  }
-  50% { 
-    box-shadow: 0 0 25px var(--primary-color), inset 0 0 10px var(--primary-color);
-    opacity: 0.8;
-  }
-}
-
-.animate-neon-flicker {
-  animation: neon-flicker 1.5s infinite;
 }
 
 ul, ol {

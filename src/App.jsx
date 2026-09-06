@@ -38,15 +38,28 @@ export default function App() {
   const ADMIN_PASSCODE = 'admsemeadores*';
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    const themeName = isDarkMode ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', themeName);
+    localStorage.setItem('theme', themeName);
+
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute('content', isDarkMode ? '#121212' : '#f7f7f7');
+    }
   }, [isDarkMode]);
+
+  const handleCloseAuthModal = () => {
+    setIsAuthModalOpen(false);
+    setAdminPassword('');
+    setAuthError(false);
+    setShowAdminPassword(false);
+  };
 
   const handleAuthSubmit = () => {
     if (adminPassword === ADMIN_PASSCODE) {
       setIsAuthenticatedAdmin(true);
       setIsAdminView(true);
-      setIsAuthModalOpen(false);
+      handleCloseAuthModal();
     } else {
       setAuthError(true);
     }
@@ -142,7 +155,7 @@ export default function App() {
                   fontFamily: "'Montserrat', sans-serif",
                   backgroundColor: 'var(--primary-color)',
                   borderColor: 'var(--primary-color)',
-                  color: '#F7F7F7',
+                  color: 'var(--submit-btn-text)',
                   boxShadow: (text.trim() && text !== '<br>') 
                   ? 'var(--submit-shadow)' 
                   : 'none',
@@ -179,7 +192,7 @@ export default function App() {
 
       <AuthModal 
         isAuthModalOpen={isAuthModalOpen}
-        setIsAuthModalOpen={setIsAuthModalOpen}
+        setIsAuthModalOpen={handleCloseAuthModal}
         darkMode={isDarkMode}
         adminPassword={adminPassword}
         setAdminPassword={setAdminPassword}
