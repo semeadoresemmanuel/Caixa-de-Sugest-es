@@ -153,8 +153,8 @@ export default function App() {
                 }`}
                 style={{ 
                   fontFamily: "'Montserrat', sans-serif",
-                  backgroundColor: 'var(--primary-color)',
-                  borderColor: 'var(--primary-color)',
+                  backgroundColor: 'transparent',
+                  borderColor: 'var(--border-color)',
                   color: 'var(--submit-btn-text)',
                   boxShadow: (text.trim() && text !== '<br>') 
                   ? 'var(--submit-shadow)' 
